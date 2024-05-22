@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/new.css">
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    </style>
+</head>
+<body>
+
+
+  <section class="home" id ="home">
+    <nav>
+    <h2>ASU <span>MAZAD</span></h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="Services (2).html">Services</a></li>
+      <li><a href="Review.html">Reviews</a></li>
+      <li><a href="contact us.html">Contact Us</a></li>
+      <li><a href="buynow.html">Cars</a></li>
+    </ul>
+    <a href="login.html" class="buy">Login</a>
+   </nav>
+</section>
+
+<!--time-->
+<div class="row">
+<div style="width: 200px;">
+    <p id="current-time"></p>
+</div>
+</div>
+<script src="assest/time.js"></script>
+
+    <div class="container">
+        <h1>Car Specifications</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><span id="nameError" class="error">Name is required.</span><br><br>
+
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email"><span id="emailError" class="error">Invalid email address.</span><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age"><span id="ageError" class="error">Age must be between 18 and 99.</span><br><br>
+
+        <label>Type:</label>
+        <input type="checkbox" name="checkboxGroup" value="CAR"> CARS
+        <input type="checkbox" name="checkboxGroup" value="BIKE"> BIKE
+        <input type="checkbox" name="checkboxGroup" value="TRUCK"> TRUCK  
+        <span id="checkboxError" class="error">At least one checkbox must be selected.</span><br><br>
+
+        <label>Transmission:</label>
+        <input type="radio" name="radioGroup" value="Manual"> Manual
+        <input type="radio" name="radioGroup" value="Automatic"> Automatic
+        <span id="radioError" class="error">Please select one option.</span><br><br>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <textarea id="report" rows="10" cols="50" readonly></textarea>
+    </div>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            const name = document.getElementById('name').value.trim();
+            const age = document.getElementById('age').value;
+            const email = document.getElementById('email').value.trim();
+            const checkboxes = document.getElementsByName('checkboxGroup');
+            const radios = document.getElementsByName('radioGroup');
+
+            // Name validation
+            if (name === '') {
+                document.getElementById('nameError').style.display = 'inline';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').style.display = 'none';
+            }
+
+            // Age validation
+            if (age < 18 || age > 99) {
+                document.getElementById('ageError').style.display = 'inline';
+                isValid = false;
+            } else {
+                document.getElementById('ageError').style.display = 'none';
+            }
+
+            // Email validation
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').style.display = 'inline';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            // Checkbox validation
+            let checkboxChecked = false;
+            for (let checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    checkboxChecked = true;
+                    break;
+                }
+            }
+            if (!checkboxChecked) {
+                document.getElementById('checkboxError').style.display = 'inline';
+                isValid = false;
+            } else {
+                document.getElementById('checkboxError').style.display = 'none';
+            }
+
+            // Radio button validation
+            let radioChecked = false;
+            for (let radio of radios) {
+                if (radio.checked) {
+                    radioChecked = true;
+                    break;
+                }
+            }
+            if (!radioChecked) {
+                document.getElementById('radioError').style.display = 'inline';
+                isValid = false;
+            } else {
+                document.getElementById('radioError').style.display = 'none';
+            }
+
+            if (isValid) {
+                generateReport(name, age, email, checkboxes, radios);
+            }
+        }
+
+        function generateReport(name, age, email, checkboxes, radios) {
+            let report = `Report:\n\n`;
+            report += `Name: ${name}\n`;
+            report += `Age: ${age}\n`;
+            report += `Email: ${email}\n`;
+
+            report += `Selected type: `;
+            for (let checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    report += `${checkbox.value} `;
+                }
+            }
+            report += `\n`;
+
+            for (let radio of radios) {
+                if (radio.checked) {
+                    report += `Selected Transmission: ${radio.value}\n`;
+                }
+            }
+
+            document.getElementById('report').value = report;
+        }
+    </script>
+</body>
+</html>

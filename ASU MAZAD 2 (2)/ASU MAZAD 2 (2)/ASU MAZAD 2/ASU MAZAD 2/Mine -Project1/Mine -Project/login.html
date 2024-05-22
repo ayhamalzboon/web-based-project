@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="css/login.css" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required />
+                    <i class="bx bxs-user"></i>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="password" required />
+                    <i class="bx bxs-lock-alt"></i>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" />Remember me</label>
+                    <a href="#">Forget password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            const username = document.querySelector('input[type="text"]');
+            const password = document.querySelector('input[type="password"]');
+            const btn = document.querySelector('button[type="submit"]');
+            const usernameInputBox = username.parentElement;
+            const passwordInputBox = password.parentElement;
+            const usernameValidationMessage = usernameInputBox.querySelector(
+                ".validation-message"
+            );
+            const passwordValidationMessage = passwordInputBox.querySelector(
+                ".validation-message"
+            );
+
+            function validateUsername() {
+                const usernameValue = username.value.trim();
+                const isValid =
+                    usernameValue.length >= 5 &&
+                    /^[a-zA-Z]+$/.test(usernameValue);
+                usernameInputBox.classList.remove("valid", "invalid");
+                usernameInputBox.classList.add(isValid ? "valid" : "invalid");
+                usernameValidationMessage.textContent = isValid
+                    ? ""
+                    : "Username must consist of english letters only, no less than 5 characters, and no spaces";
+            }
+
+            function validatePassword() {
+                const passwordValue = password.value.trim();
+                const isValid =
+                    passwordValue.length >= 8 &&
+                    /^[a-zA-Z0-9@$!%*?&]+$/.test(passwordValue);
+                passwordInputBox.classList.remove("valid", "invalid");
+                passwordInputBox.classList.add(isValid ? "valid" : "invalid");
+                passwordValidationMessage.textContent = isValid
+                    ? ""
+                    : "Password must consist of at least 8 characters and can include letters, numbers, or symbols";
+            }
+
+            username.addEventListener("input", validateUsername);
+            password.addEventListener("input", validatePassword);
+
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const usernameValue = username.value.trim();
+                const passwordValue = password.value.trim();
+
+                if (usernameValue === "" || passwordValue === "") {
+                    alert("Please enter username and password");
+                    return;
+                }
+
+                if (
+                    usernameValue.length < 5 ||
+                    !usernameValue.match(/^[a-zA-Z]+$/)
+                ) {
+                    alert(
+                        "Username must consist of english letters only, no less than 5 characters, and no spaces"
+                    );
+                    return;
+                }
+
+                if (
+                    passwordValue.length < 8 ||
+                    !passwordValue.match(/^[a-zA-Z0-9@$!%*?&]+$/)
+                ) {
+                    alert(
+                        "Password must consist of at least 8 characters and can include letters, numbers, or symbols"
+                    );
+                    return;
+                }
+
+                window.location.href = "home.html";
+            });
+        </script>
+    </body>
+</html>

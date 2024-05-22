@@ -1,0 +1,139 @@
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+font-family: sans-serif;
+
+}
+span{
+    color:#ff274b;
+}
+h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.12;
+    color: var(--bgColor-1);
+}
+nav{
+    padding-top: 2.2rem;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li{
+list-style-type: none;
+display: inline-block;
+margin: 0.8rem 1.5rem;
+}
+nav ul li a{
+    color: var(--bgColor-1);
+    text-decoration: none;
+    transition: 0.2s;
+}
+nav ul li a:hover{
+    color: var(--primary);
+}
+.buy{
+    background-color:#ff274b;
+    color: var(--bgColor-1);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.81rem 1.87rem;
+    border-radius: 30px;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+.buy:hover{
+    background-color: transparent;
+    border: 2px solid #ff274b;
+}
+.Contact{
+    min-height: 100vh;
+    background-image: url("img/back.jpg");
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+}
+.container{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.container h2{
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #b70000;
+}
+.Contact-wrapper{
+display: grid;
+grid-template-columns: (2,1fr) ;
+grid-gap: 30px;
+}
+.Contact-form{
+    text-align: left;
+}
+.Contact-form h3{
+    font-size: 24px ;
+    margin-bottom: 20px;
+    color: #b70000;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+input , textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f6dddd;
+    color: #333;
+}
+input:focus, 
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+}
+button{
+    display: inline-block;
+    padding: 12px 24px;
+    background-color:rgb(163, 0, 0);
+    color:#ffffff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+button:hover{
+    background-color: rgb(0, 74, 87);
+}
+.Contact-info{
+    text-align: left;
+}
+.Contact-info h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #a70000;
+}
+.Contact-info p{
+    margin-bottom: 10px;
+    color: #a70000;
+}
+.Contact-info i{
+    color: teal;
+    margin-right: 10px;
+}
+@media screen and(max-width: 768px){
+    .container{
+        padding: 20px;
+    }
+    .Contact-wrapper{
+        grid-template-columns: 1fr;
+    }
+}
+#current-time {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    
+  }
+  

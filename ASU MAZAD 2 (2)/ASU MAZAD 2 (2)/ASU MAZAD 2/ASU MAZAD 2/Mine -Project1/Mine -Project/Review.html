@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/Review.css" />
+    <title>Reviews | Customer Section</title>
+    <style>
+
+.card {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.card__details h4 {
+  text-align: right;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+    </style>
+  </head>
+  <body>
+
+
+    <section class="home" id ="home">
+      <nav>
+      <h2>ASU <span>MAZAD</span></h2>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about us.html">About Us</a></li>
+        <li><a href="Services (2).html">Services</a></li>
+        <li><a href="Review.html">Reviews</a></li>
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="buynow.html">Cars</a></li>
+      </ul>
+      <a href="login.html" class="buy">Login</a>
+     </nav>
+  </section>
+  <!--time-->
+  <div class="row">
+    <div style="width: 200px;">
+        <p id="current-time"></p>
+    </div>
+</div>
+<script src="assest/time.js"></script>
+
+
+    <header>
+      <div class="container">
+        <div class="container__left">
+          <h1 style="color: palevioletred ">Read what our customers love about us</h1>
+          <p>
+            ASU MAZAD is your top choice for buying, selling, and renting cars.
+             Trusted by hundreds of clients, we specialize in enhancing customer experiences in the automotive sector.
+              Partner with us to boost sales and drive revenue growth.
+          </p>
+          <p>
+            We have helped companies increase their customer base and generate
+            multifold revenue with our service.
+          </p>
+          <button  style="background:linear-gradient(to right,var(--primary-color),
+          var(--primary-color-dark))">Read our success stories</button>
+        </div>
+        <div class="container__right">
+          <div class="card">
+            <img src="css/img/WhatsApp Image 2024-04-22 at 01.24.29_0d428676.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                    Their team is helpful. With all the services they offer,
+                    they're the best choice for anything automotive. 
+                </p>
+                <h4>- Marnus Stephen</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="css/img/WhatsApp Image 2024-04-22 at 01.24.29_e436fcea.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                    ASU MAZAD made selling my car a breeze! Their platform is user-friendly,
+                    and their team handled everything with professionalism. 
+                    Highly recommended
+                </p>
+                <h4>- Andrew Jettpace</h4>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="css/img/WhatsApp Image 2024-04-22 at 01.24.55_2bc68e22.jpg" alt="user" />
+            <div class="card__content">
+              <span><i class="ri-double-quotes-l"></i></span>
+              <div class="card__details">
+                <p>
+                  I absolutely loved working with this team. Complete
+                  experts at what they do!
+                </p>
+                <h4>- Mark Henry</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

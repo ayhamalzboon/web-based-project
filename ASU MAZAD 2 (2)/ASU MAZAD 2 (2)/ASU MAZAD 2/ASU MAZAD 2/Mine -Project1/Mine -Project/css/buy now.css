@@ -1,0 +1,52 @@
+body{
+  background-image: url(img/back.jpg);
+}
+  span{
+    color:#ff274b;
+}
+h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.12;
+    color: var(--bgColor-1);
+}
+nav{
+    padding-top: 2.2rem;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li{
+list-style-type: none;
+display: inline-block;
+margin: 0.8rem 1.5rem;
+}
+nav ul li a{
+    color: var(--bgColor-1);
+    text-decoration: none;
+    transition: 0.2s;
+}
+nav ul li a:hover{
+    color: var(--primary);
+}
+.buy{
+    background-color:#ff274b;
+    color: var(--bgColor-1);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.81rem 1.87rem;
+    border-radius: 30px;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+.buy:hover{
+    background-color: transparent;
+    border: 2px solid #ff274b;
+}
+#current-time {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    
+  }

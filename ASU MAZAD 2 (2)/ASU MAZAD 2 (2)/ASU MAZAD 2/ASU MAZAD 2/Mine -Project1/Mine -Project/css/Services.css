@@ -1,0 +1,140 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    background-image: url("img/back.jpg");;
+    background-size: cover;
+}
+.title h1{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 42px;
+}
+.title h1::after{
+    content: "";
+    height: 4px;
+    width:230px;
+    background-color: #000;
+    display: block;
+    margin: auto;
+}
+.Services{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 90px auto ;
+    text-align: center;
+}
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 20px 20px;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card:hover{
+    background-color: #b8d4de;
+    transition: 0.4s ease;
+}
+.card .icon{
+    font-size: 35px;
+    margin-bottom:10px ;
+}
+.card h2{
+    font-size: 28px;
+    color: #c94f4f;
+    margin-bottom: 20px;
+}
+.card p{
+    font-size: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #000000;
+}
+.button{
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2c677c;
+    padding: 8px 12px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+.button:hover{
+    background-color: #c94f4f;
+    transition: 0.4s ease;
+}
+@media screen and (max-width: 940px){ 
+    .Services{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        width: 85%;
+        display: flex;
+        margin: 20px 0px;
+    }
+
+} 
+
+
+span{
+    color:#ff274b;
+}
+h2{
+    font-size: 2.2rem;
+    letter-spacing: 0.12;
+    color: var(--bgColor-1);
+}
+nav{
+    padding-top: 2.2rem;
+    padding-left: var(--padding);
+    padding-right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li{
+list-style-type: none;
+display: inline-block;
+margin: 0.8rem 1.5rem;
+}
+nav ul li a{
+    color: var(--bgColor-1);
+    text-decoration: none;
+    transition: 0.2s;
+}
+nav ul li a:hover{
+    color: var(--primary);
+}
+.buy{
+    background-color:#ff274b;
+    color: var(--bgColor-1);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.81rem 1.87rem;
+    border-radius: 30px;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+.buy:hover{
+    background-color: transparent;
+    border: 2px solid #ff274b;
+}
+#current-time {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    
+  }
